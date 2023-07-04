@@ -4,3 +4,4 @@
 # 환경설정
 - Tomcat 9.0
 - eclipse 2022-12
+- JDK 17
