@@ -97,7 +97,7 @@ public class UserDAO {
 		String sql = "Select * from user where id = ?";
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		User user = new User();
+		User user = null;
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
@@ -107,11 +107,14 @@ public class UserDAO {
 			rs = pstmt.executeQuery();
 			
 			if (rs.next()) {
+				user = new User();
 				user.setId(rs.getInt("id"));
 				user.setName(rs.getString("name"));
 				user.setAge(rs.getInt("age"));
 				user.setPhone(rs.getString("phone"));
 				user.setEmail(rs.getString("email"));
+			} else {
+				user = null;
 			}
 		} catch(SQLException e) {
 			e.printStackTrace();
@@ -133,7 +136,7 @@ public class UserDAO {
 		String sql = "Select * from user where email = ?";
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		User user = new User();
+		User user = null;
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
@@ -143,11 +146,14 @@ public class UserDAO {
 			rs = pstmt.executeQuery();
 			
 			if (rs.next()) {
+				user = new User();
 				user.setId(rs.getInt("id"));
 				user.setName(rs.getString("name"));
 				user.setAge(rs.getInt("age"));
 				user.setPhone(rs.getString("phone"));
 				user.setEmail(rs.getString("email"));
+			} else {
+				user = null;
 			}
 		} catch(SQLException e) {
 			e.printStackTrace();
