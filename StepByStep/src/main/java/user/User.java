@@ -1,4 +1,4 @@
-package com.example;
+package user;
 
 public class User {
 	int id;

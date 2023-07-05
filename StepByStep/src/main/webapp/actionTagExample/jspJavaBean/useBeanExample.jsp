@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<jsp:useBean id="user" class="com.example.User" scope="page" />
+<jsp:useBean id="user" class="user.User" scope="page" />
 
 <%
 	user.setId(1);

@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<jsp:useBean id="user" class="com.example.User" scope="page" />
+<jsp:useBean id="user" class="user.User" scope="page" />
 
 <jsp:setProperty name="user" property="id" value="<%=1 %>"/>
 <jsp:setProperty name="user" property="age" value="<%=21 %>"/>
