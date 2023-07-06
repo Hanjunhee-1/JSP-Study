@@ -17,6 +17,13 @@ public class UserDAO {
 		String sql = "Insert into user(name, age, phone, email) values (?, ?, ?, ?)";
 		PreparedStatement pstmt = null;
 		int result = 0;
+		
+		if (user.getEmail() != "") {
+			User foundUser = this.getUserByEmail(user.getEmail());
+			if (foundUser != null) {
+				return 0;
+			}
+		}
 		try {
 			pstmt = conn.prepareStatement(sql);
 			
