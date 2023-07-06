@@ -10,8 +10,8 @@
 
 <h1>조회하려는 사용자의 ID 를 입력해주세요</h1>
 <form action="getUser.jsp" method="GET">
-	<input type="text" name="userId" id="id" />
-	<input type="button" value="조회하기" onclick="return check();"/>
+	<input type="text" name="userId" id="id" required/>
+	<input type="submit" value="조회하기" onclick="return check();"/>
 </form>
 
 <script type="text/javascript">
