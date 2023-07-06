@@ -180,7 +180,7 @@ public class UserDAO {
 			return 0;
 		}
 		
-		if (user.getName() != null) {
+		if (user.getName() != "") {
 			sql += " name = ?,";
 			params.add(user.getName());
 		}
@@ -190,12 +190,12 @@ public class UserDAO {
 			params.add(user.getAge());
 		}
 		
-		if (user.getPhone() != null) {
+		if (user.getPhone() != "") {
 			sql += " phone = ?,";
 			params.add(user.getPhone());
 		}
 		
-		if (user.getEmail() != null) {
+		if (user.getEmail() != "") {
 			User foundUser = this.getUserByEmail(user.getEmail());
 			if (foundUser != null) {
 				return 0;
@@ -234,6 +234,7 @@ public class UserDAO {
 			e.printStackTrace();
 		} finally {
 			try {
+				conn.setAutoCommit(true);
 				if (pstmt != null) {
 					pstmt.close();
 				}
